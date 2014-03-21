@@ -97,6 +97,16 @@ public class ArgumentProcessor {
     }
 
     /**
+     * @return the TestLink XML filename given on command line with <code>-junit</code>
+     *         option.
+     */
+    public String getJUnitFileName() {
+        if (reportDir == null)
+            return null;
+        return new File(reportDir, "junit-results.xml").getAbsolutePath();
+    }
+
+    /**
      * @return Whether <code>-batch</code> option is given on the command line.
      */
     public boolean isBatchMode() {

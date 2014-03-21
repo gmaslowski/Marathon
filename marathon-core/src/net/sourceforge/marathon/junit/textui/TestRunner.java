@@ -71,6 +71,11 @@ public class TestRunner extends junit.textui.TestRunner {
         if (testLinkXmlFileName != null) {
             resultReporter.generateReport(new TestLinkXMLOutputter(), testLinkXmlFileName);
         }
+
+        String jUnitFileName = argProcessor.getJUnitFileName();
+        if (jUnitFileName != null) {
+            resultReporter.generateReport(new JUnitOutputter(), jUnitFileName);
+        }
         printer.printDetails(result, runTime);
         pause(wait);
         return result;
